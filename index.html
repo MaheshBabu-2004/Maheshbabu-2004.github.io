@@ -1,95 +1,164 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-<title>Kollu Mahesh Babu | Portfolio</title>
+
+<title>Kollu Mahesh Babu | Cybersecurity Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 
 body{
-font-family:Arial;
 margin:0;
-background:#0f172a;
-color:white;
+font-family:Arial;
+background:black;
+color:#00ffea;
+overflow-x:hidden;
 }
+
+/* MATRIX BACKGROUND */
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+/* NAVBAR */
 
 nav{
 background:#020617;
-padding:15px;
+padding:18px;
 text-align:center;
 }
 
 nav a{
-color:white;
+color:#00ffe5;
 margin:20px;
 text-decoration:none;
 font-size:18px;
+font-family:'Orbitron';
 }
 
-section{
-padding:60px;
-text-align:center;
-}
-
-h1{
-color:#38bdf8;
-}
+/* HERO */
 
 .hero{
-padding-top:40px;
+text-align:center;
+padding:80px 20px;
+}
+
+.name{
+font-size:70px;
+font-family:'Orbitron';
+color:#00ffe5;
+text-shadow:0 0 15px #00ffe5;
 }
 
 .hero img{
-width:180px;
+width:170px;
 border-radius:50%;
-margin-top:15px;
+border:3px solid #00ffe5;
+margin:20px;
 }
+
+/* TYPING */
 
 .typing{
+height:30px;
 font-size:22px;
-color:#38bdf8;
-margin-top:10px;
-height:28px;   /* prevents page jumping */
+color:#00ffe5;
 }
 
+/* BUTTON */
+
 button{
-background:#38bdf8;
-border:none;
-padding:10px 20px;
-border-radius:6px;
-font-size:16px;
+background:black;
+color:#00ffe5;
+border:2px solid #00ffe5;
+padding:10px 25px;
 cursor:pointer;
+font-size:16px;
+margin-top:20px;
 }
+
+button:hover{
+background:#00ffe5;
+color:black;
+}
+
+/* SECTION */
+
+section{
+padding:70px 20px;
+text-align:center;
+}
+
+h2{
+font-family:'Orbitron';
+color:#00ffe5;
+}
+
+/* SKILLS */
 
 .skills li{
 list-style:none;
-padding:8px;
+padding:10px;
+}
+
+/* PROJECT CARDS */
+
+.project-grid{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
 }
 
 .project{
-background:#1e293b;
-margin:20px;
+background:#020617;
 padding:20px;
+width:280px;
+border:1px solid #00ffe5;
 border-radius:10px;
+box-shadow:0 0 10px #00ffe5;
+}
+
+.project img{
+width:50px;
+}
+
+/* OTP BOX */
+
+#otpBox{
+display:none;
+margin-top:20px;
+}
+
+input{
+padding:8px;
 }
 
 </style>
+
 </head>
 
 <body>
+
+<canvas id="matrix"></canvas>
 
 <nav>
 <a href="#">Home</a>
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
 <a href="#projects">Projects</a>
-<a href="#certifications">Certifications</a>
 <a href="#contact">Contact</a>
 </nav>
 
+
 <section class="hero">
 
-<h1>Kollu Mahesh Babu</h1>
+<div class="name">Kollu Mahesh Babu</div>
 
 <img src="profile.jpg.jpeg">
 
@@ -99,23 +168,25 @@ border-radius:10px;
 <span id="typing-text"></span>
 </div>
 
-<br>
+<button onclick="sendOTP()">Download Resume</button>
 
-<a href="Kollu_Mahesh_Babu_Resume.pdf" download>
-<button>Download Resume</button>
-</a>
+<div id="otpBox">
+<br>
+<input type="text" id="otpInput" placeholder="Enter OTP">
+<button onclick="verifyOTP()">Verify</button>
+</div>
 
 </section>
 
 
 <section id="about">
 
-<h1>About Me</h1>
+<h2>About Me</h2>
 
 <p>
-Highly motivated Computer Science graduate specializing in Cybersecurity with experience in
-cloud infrastructure, system monitoring, and data analysis.
-Skilled in Python, SQL, AWS, Linux, and cybersecurity tools.
+Cybersecurity enthusiast skilled in SOC monitoring, cloud security,
+Linux administration, and threat analysis.
+Focused on building secure infrastructure and analyzing cyber threats.
 </p>
 
 </section>
@@ -123,15 +194,16 @@ Skilled in Python, SQL, AWS, Linux, and cybersecurity tools.
 
 <section id="skills">
 
-<h1>Technical Skills</h1>
+<h2>Skills</h2>
 
 <ul class="skills">
 
-<li>Python, C++, SQL</li>
-<li>Cybersecurity, SOC, SIEM</li>
-<li>AWS Load Balancing & CloudWatch</li>
-<li>Linux & Windows Administration</li>
-<li>Wireshark, Splunk, SolarWinds, Nagios</li>
+<li>Cybersecurity</li>
+<li>SOC Monitoring</li>
+<li>Blue Team Operations</li>
+<li>Cloud Security</li>
+<li>Linux Administration</li>
+<li>Data Analytics</li>
 
 </ul>
 
@@ -140,105 +212,136 @@ Skilled in Python, SQL, AWS, Linux, and cybersecurity tools.
 
 <section id="projects">
 
-<h1>Projects</h1>
+<h2>Projects</h2>
+
+<div class="project-grid">
 
 <div class="project">
-<h3>AWS Load Balancing & Cloud Optimization</h3>
-<p>Implemented AWS Application Load Balancer improving response time by 30% and reducing downtime by 25%.</p>
+<img src="https://img.icons8.com/fluency/96/cloud.png">
+<h3>AWS Load Balancer</h3>
+<p>Improved application availability and performance.</p>
 </div>
 
 <div class="project">
-<h3>Cybersecurity Monitoring System</h3>
-<p>Developed a monitoring system using keylogging techniques to analyze endpoint security.</p>
+<img src="https://img.icons8.com/fluency/96/security-checked.png">
+<h3>Security Monitoring</h3>
+<p>Developed system monitoring with logging analysis.</p>
 </div>
 
 <div class="project">
-<h3>Recuva Data Recovery Tool Enhancement</h3>
-<p>Enhanced recovery algorithms improving efficiency and usability. Research published at INSPIRE'25.</p>
+<img src="https://img.icons8.com/fluency/96/database.png">
+<h3>Data Recovery Tool</h3>
+<p>Enhanced recovery algorithm efficiency.</p>
 </div>
 
-</section>
-
-
-<section id="certifications">
-
-<h1>Certifications</h1>
-
-<p>Microsoft Azure Data Engineer Associate</p>
-<p>Google Data Analytics – Coursera</p>
-<p>Cisco Cybersecurity Essentials</p>
-<p>Introduction to Cybersecurity – Cisco</p>
-<p>Cybersecurity Analyst Simulation – TATA Forage</p>
-<p>OPSWAT CIP Program</p>
+</div>
 
 </section>
 
 
 <section id="contact">
 
-<h1>Contact</h1>
+<h2>Contact</h2>
 
 <p>Email: maheshkollubabu@gmail.com</p>
 <p>Phone: +91 9492617422</p>
 
 <p>
-LinkedIn:
-<a href="https://linkedin.com/in/k-mahesh-babu-78580224a" style="color:#38bdf8">
-linkedin.com/in/k-mahesh-babu-78580224a
-</a>
-</p>
-
-<p>
 GitHub:
-<a href="https://github.com/MAHESHBABU3722" style="color:#38bdf8">
+<a href="https://github.com/MAHESHBABU3722">
 github.com/MAHESHBABU3722
 </a>
 </p>
 
 </section>
 
+<section>
+
+<h2>Visitors</h2>
+
+<p id="visitorCount"></p>
+
+</section>
+
 
 <script>
 
-const words = [
+/* MATRIX BACKGROUND */
+
+const canvas=document.getElementById("matrix");
+const ctx=canvas.getContext("2d");
+
+canvas.height=window.innerHeight;
+canvas.width=window.innerWidth;
+
+const letters="01";
+const matrix=letters.split("");
+
+const font_size=16;
+const columns=canvas.width/font_size;
+
+const drops=[];
+
+for(let x=0;x<columns;x++)
+drops[x]=1;
+
+function draw(){
+
+ctx.fillStyle="rgba(0,0,0,0.05)";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+ctx.fillStyle="#00ffe5";
+ctx.font=font_size+"px monospace";
+
+for(let i=0;i<drops.length;i++){
+
+const text=matrix[Math.floor(Math.random()*matrix.length)];
+
+ctx.fillText(text,i*font_size,drops[i]*font_size);
+
+if(drops[i]*font_size>canvas.height && Math.random()>0.975)
+drops[i]=0;
+
+drops[i]++;
+
+}
+
+}
+
+setInterval(draw,35);
+
+
+/* TYPING */
+
+const words=[
 "Cyber Security",
 "SOC Analyst",
 "Blue Team",
 "Cloud Security",
-"Data Analytics",
-"Linux Security"
+"Linux Security",
+"Threat Monitoring"
 ];
 
-let i=0;
-let j=0;
-let currentWord="";
-let isDeleting=false;
+let i=0,j=0,isDeleting=false;
 
 function type(){
 
-currentWord = words[i];
+let word=words[i];
 
-if(isDeleting){
-j--;
-}else{
-j++;
-}
+if(isDeleting) j--;
+else j++;
 
-document.getElementById("typing-text").innerHTML =
-currentWord.substring(0,j);
+document.getElementById("typing-text").innerHTML=word.substring(0,j);
 
-if(!isDeleting && j === currentWord.length){
+if(!isDeleting && j===word.length){
 isDeleting=true;
 setTimeout(type,1000);
 return;
 }
 
-if(isDeleting && j === 0){
+if(isDeleting && j===0){
 isDeleting=false;
-i++;
-if(i===words.length){
-i=0;
-}
+i=(i+1)%words.length;
 }
 
 setTimeout(type,120);
@@ -246,6 +349,49 @@ setTimeout(type,120);
 }
 
 type();
+
+
+/* OTP SYSTEM */
+
+let otp;
+
+function sendOTP(){
+
+otp=Math.floor(1000+Math.random()*9000);
+
+alert("OTP sent to Mahesh email: "+otp);
+
+document.getElementById("otpBox").style.display="block";
+
+}
+
+function verifyOTP(){
+
+let user=document.getElementById("otpInput").value;
+
+if(user==otp){
+
+window.location.href="Kollu_Mahesh_Babu_Resume.pdf";
+
+}else{
+
+alert("Wrong OTP");
+
+}
+
+}
+
+
+/* VISITOR COUNTER */
+
+if(localStorage.visits){
+localStorage.visits=parseInt(localStorage.visits)+1;
+}else{
+localStorage.visits=1;
+}
+
+document.getElementById("visitorCount").innerHTML=
+"Visitors: "+localStorage.visits;
 
 </script>
 
