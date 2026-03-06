@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 <title>Kollu Mahesh Babu | Portfolio</title>
 
 <style>
 
 body{
-font-family: Arial;
+font-family:Arial;
 margin:0;
 background:#0f172a;
 color:white;
@@ -34,6 +35,32 @@ h1{
 color:#38bdf8;
 }
 
+.hero{
+padding-top:40px;
+}
+
+.hero img{
+width:180px;
+border-radius:50%;
+margin-top:15px;
+}
+
+.typing{
+font-size:22px;
+color:#38bdf8;
+margin-top:10px;
+height:28px;   /* prevents page jumping */
+}
+
+button{
+background:#38bdf8;
+border:none;
+padding:10px 20px;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+}
+
 .skills li{
 list-style:none;
 padding:8px;
@@ -47,7 +74,6 @@ border-radius:10px;
 }
 
 </style>
-
 </head>
 
 <body>
@@ -61,33 +87,56 @@ border-radius:10px;
 <a href="#contact">Contact</a>
 </nav>
 
-<section>
+<section class="hero">
+
 <h1>Kollu Mahesh Babu</h1>
-<p>Cybersecurity | Cloud | Data Analytics Enthusiast</p>
+
+<img src="profile.jpg.jpeg">
+
 <p>B.Tech Computer Science (Cybersecurity)</p>
+
+<div class="typing">
+<span id="typing-text"></span>
+</div>
+
+<br>
+
+<a href="Kollu_Mahesh_Babu_Resume.pdf" download>
+<button>Download Resume</button>
+</a>
+
 </section>
 
+
 <section id="about">
+
 <h1>About Me</h1>
+
 <p>
-Highly motivated Computer Science graduate specializing in Cybersecurity with experience in software development, cloud infrastructure, and security analysis.
-Skilled in Python, SQL, AWS, and security monitoring tools.
+Highly motivated Computer Science graduate specializing in Cybersecurity with experience in
+cloud infrastructure, system monitoring, and data analysis.
+Skilled in Python, SQL, AWS, Linux, and cybersecurity tools.
 </p>
+
 </section>
+
 
 <section id="skills">
 
 <h1>Technical Skills</h1>
 
 <ul class="skills">
+
 <li>Python, C++, SQL</li>
 <li>Cybersecurity, SOC, SIEM</li>
-<li>AWS, Load Balancing, CloudWatch</li>
+<li>AWS Load Balancing & CloudWatch</li>
 <li>Linux & Windows Administration</li>
 <li>Wireshark, Splunk, SolarWinds, Nagios</li>
+
 </ul>
 
 </section>
+
 
 <section id="projects">
 
@@ -100,15 +149,16 @@ Skilled in Python, SQL, AWS, and security monitoring tools.
 
 <div class="project">
 <h3>Cybersecurity Monitoring System</h3>
-<p>Developed a monitoring and keylogging system to analyze endpoint security and anomaly detection.</p>
+<p>Developed a monitoring system using keylogging techniques to analyze endpoint security.</p>
 </div>
 
 <div class="project">
 <h3>Recuva Data Recovery Tool Enhancement</h3>
-<p>Enhanced recovery algorithms improving efficiency and usability. Research published in INSPIRE'25.</p>
+<p>Enhanced recovery algorithms improving efficiency and usability. Research published at INSPIRE'25.</p>
 </div>
 
 </section>
+
 
 <section id="certifications">
 
@@ -122,6 +172,7 @@ Skilled in Python, SQL, AWS, and security monitoring tools.
 <p>OPSWAT CIP Program</p>
 
 </section>
+
 
 <section id="contact">
 
@@ -145,6 +196,58 @@ github.com/MAHESHBABU3722
 </p>
 
 </section>
+
+
+<script>
+
+const words = [
+"Cyber Security",
+"SOC Analyst",
+"Blue Team",
+"Cloud Security",
+"Data Analytics",
+"Linux Security"
+];
+
+let i=0;
+let j=0;
+let currentWord="";
+let isDeleting=false;
+
+function type(){
+
+currentWord = words[i];
+
+if(isDeleting){
+j--;
+}else{
+j++;
+}
+
+document.getElementById("typing-text").innerHTML =
+currentWord.substring(0,j);
+
+if(!isDeleting && j === currentWord.length){
+isDeleting=true;
+setTimeout(type,1000);
+return;
+}
+
+if(isDeleting && j === 0){
+isDeleting=false;
+i++;
+if(i===words.length){
+i=0;
+}
+}
+
+setTimeout(type,120);
+
+}
+
+type();
+
+</script>
 
 </body>
 </html>
