@@ -13,13 +13,11 @@
 
 <style>
 
-/* BODY */
-
 body{
 margin:0;
 font-family:'Poppins',sans-serif;
 background:#020617;
-color:#cbd5f5;
+color:#e2e8f0;
 overflow-x:hidden;
 }
 
@@ -37,8 +35,8 @@ z-index:-1;
 nav{
 position:fixed;
 width:100%;
-background:rgba(2,6,23,0.8);
-backdrop-filter:blur(8px);
+background:rgba(2,6,23,0.9);
+backdrop-filter:blur(6px);
 padding:15px;
 text-align:center;
 z-index:10;
@@ -50,7 +48,6 @@ margin:20px;
 font-size:20px;
 text-decoration:none;
 font-weight:600;
-transition:0.3s;
 }
 
 nav a:hover{
@@ -77,8 +74,6 @@ color:#38bdf8;
 
 .hero-sub{
 font-size:26px;
-margin-top:10px;
-color:#e2e8f0;
 }
 
 /* BUTTON */
@@ -92,7 +87,6 @@ color:#38bdf8;
 border:2px solid #38bdf8;
 cursor:pointer;
 border-radius:8px;
-transition:0.3s;
 }
 
 .resume-btn:hover{
@@ -100,18 +94,9 @@ background:#38bdf8;
 color:black;
 }
 
-/* KEY BOX */
-
 #keyBox{
 display:none;
 margin-top:20px;
-}
-
-input{
-padding:12px;
-font-size:16px;
-border-radius:6px;
-border:none;
 }
 
 /* SECTION */
@@ -138,7 +123,7 @@ border:3px solid #38bdf8;
 /* ABOUT */
 
 .about-text{
-font-size:21px;
+font-size:20px;
 max-width:750px;
 margin:auto;
 line-height:1.7;
@@ -146,13 +131,57 @@ line-height:1.7;
 
 /* SKILLS */
 
-.skills{
-font-size:22px;
-}
-
 .skills li{
 list-style:none;
 padding:10px;
+font-size:22px;
+}
+
+/* PROJECTS */
+
+.project-grid{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+margin-top:30px;
+}
+
+.project{
+background:#020617;
+border:2px solid #38bdf8;
+padding:20px;
+width:260px;
+border-radius:10px;
+text-align:center;
+}
+
+.project img{
+width:70px;
+}
+
+/* CERTIFICATIONS */
+
+.cert-grid{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+margin-top:30px;
+}
+
+.cert-card{
+background:#020617;
+border:2px solid #38bdf8;
+padding:20px;
+width:260px;
+border-radius:10px;
+text-align:center;
+}
+
+.cert-card img{
+width:60px;
+margin-bottom:10px;
 }
 
 /* CONTACT */
@@ -162,9 +191,7 @@ border:2px solid #38bdf8;
 width:350px;
 margin:auto;
 padding:25px;
-font-size:20px;
 border-radius:10px;
-background:rgba(2,6,23,0.8);
 }
 
 .contact-box input,
@@ -204,6 +231,8 @@ color:black;
 <a href="#">Home</a>
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#certifications">Certifications</a>
 <a href="#contact">Contact</a>
 
 </nav>
@@ -216,13 +245,9 @@ color:black;
 Cyber Security Engineer | SOC Analyst | Cloud Security
 </p>
 
-<button class="resume-btn" onclick="openKeyBox()">
-Download Resume
-</button>
+<button class="resume-btn" onclick="openKeyBox()">Download Resume</button>
 
 <div id="keyBox">
-
-<h3>Security Access</h3>
 
 <p>Enter Access Key</p>
 
@@ -246,8 +271,8 @@ Download Resume
 
 <p class="about-text">
 
-Cybersecurity enthusiast skilled in SOC monitoring,
-Linux administration, threat detection and cloud security.
+Cybersecurity enthusiast skilled in SOC monitoring, Linux administration,
+cloud security and threat detection.
 
 Focused on protecting systems and analyzing cyber threats.
 
@@ -274,6 +299,104 @@ Currently pursuing B.Tech Computer Science (Cyber Security).
 
 </section>
 
+<section id="projects">
+
+<h2>Projects</h2>
+
+<div class="project-grid">
+
+<div class="project">
+<img src="https://img.icons8.com/color/96/security-checked.png">
+<h3>Security Monitoring System</h3>
+<p>Threat detection monitoring tool.</p>
+</div>
+
+<div class="project">
+<img src="https://img.icons8.com/color/96/database.png">
+<h3>Data Recovery Tool</h3>
+<p>Research paper on recovery tool using Recuva.</p>
+</div>
+
+<div class="project">
+<img src="https://img.icons8.com/color/96/amazon-web-services.png">
+<h3>AWS Load Balancer</h3>
+<p>High availability using AWS load balancing.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="certifications">
+
+<h2>Certifications</h2>
+
+<div class="cert-grid">
+
+<div class="cert-card">
+<img src="https://img.icons8.com/color/96/cisco.png">
+<p>Cisco Operating System Fundamentals</p>
+</div>
+
+<div class="cert-card">
+<img src="https://img.icons8.com/color/96/cisco.png">
+<p>Cisco AICTE Virtual Internship – Cyber Security</p>
+</div>
+
+<div class="cert-card">
+<img src="https://img.icons8.com/color/96/amazon-web-services.png">
+<p>AWS Cloud Computing – APSSDC</p>
+</div>
+
+<div class="cert-card">
+<img src="https://img.icons8.com/color/96/cisco.png">
+<p>Cisco Introduction to Cybersecurity</p>
+</div>
+
+<div class="cert-card">
+<img src="https://img.icons8.com/color/96/tata.png">
+<p>Tata Forage Cybersecurity Analyst Job Simulation</p>
+</div>
+
+<div class="cert-card">
+<img src="https://img.icons8.com/color/96/security-checked.png">
+<p>OPSWAT ICIP – Introduction to CIP</p>
+</div>
+
+<div class="cert-card">
+<img src="https://img.icons8.com/color/96/microsoft.png">
+<p>Microsoft Azure Data Engineer Associate</p>
+</div>
+
+<div class="cert-card">
+<img src="https://img.icons8.com/color/96/ibm.png">
+<p>IBM Introduction to Cloud Computing</p>
+</div>
+
+<div class="cert-card">
+<img src="https://img.icons8.com/color/96/google-logo.png">
+<p>Google Data Analytics – Coursera</p>
+</div>
+
+<div class="cert-card">
+<img src="https://img.icons8.com/color/96/cisco.png">
+<p>Cisco Cybersecurity Essentials</p>
+</div>
+
+<div class="cert-card">
+<img src="https://img.icons8.com/color/96/cisco.png">
+<p>Cisco Introduction to Packet Tracer</p>
+</div>
+
+<div class="cert-card">
+<img src="https://img.icons8.com/color/96/document.png">
+<p>Research Paper – Data Recovery Tool (Recuva)</p>
+</div>
+
+</div>
+
+</section>
+
 <section id="contact">
 
 <h2>Contact Me</h2>
@@ -290,23 +413,7 @@ github.com/MAHESHBABU3722
 </a>
 </p>
 
-<h3>Send Message</h3>
-
-<input type="text" placeholder="Your Name">
-<input type="email" placeholder="Your Email">
-<textarea placeholder="Message"></textarea>
-
-<button>Send</button>
-
 </div>
-
-</section>
-
-<section>
-
-<h2>Visitors</h2>
-
-<p id="visitorCount"></p>
 
 </section>
 
@@ -395,19 +502,8 @@ alert("ACCESS DENIED");
 
 }
 
-/* VISITOR COUNTER */
-
-if(localStorage.visits){
-localStorage.visits=parseInt(localStorage.visits)+1;
-}else{
-localStorage.visits=1;
-}
-
-document.getElementById("visitorCount").innerHTML="Visitors: "+localStorage.visits;
-
 </script>
 
 </body>
-
 </html>
 ```
