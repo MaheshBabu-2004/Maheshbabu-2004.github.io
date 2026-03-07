@@ -1,26 +1,31 @@
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Kollu Mahesh Babu | Cyber Security Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
 
+/* GENERAL */
+
 body{
 margin:0;
+font-family:'Poppins',sans-serif;
 background:black;
 color:#00ffe5;
-font-family:'Fredoka',sans-serif;
 overflow-x:hidden;
 }
 
-/* MATRIX BACKGROUND */
+/* CYBER BACKGROUND */
 
-canvas{
+#cyberCanvas{
 position:fixed;
 top:0;
 left:0;
@@ -31,15 +36,15 @@ z-index:-1;
 
 nav{
 background:#020617;
-padding:20px;
+padding:18px;
 text-align:center;
 }
 
 nav a{
 color:#00ffe5;
 margin:20px;
+font-size:20px;
 text-decoration:none;
-font-size:22px;
 font-weight:600;
 }
 
@@ -55,14 +60,14 @@ text-align:center;
 }
 
 .hero-title{
-font-size:80px;
+font-size:70px;
 font-family:'Orbitron';
 text-shadow:0 0 25px #00ffe5;
 }
 
 .hero-sub{
-font-size:30px;
-margin-top:15px;
+font-size:28px;
+margin-top:10px;
 }
 
 /* BUTTON */
@@ -87,7 +92,7 @@ color:black;
 
 #keyBox{
 display:none;
-margin-top:20px;
+margin-top:25px;
 }
 
 input{
@@ -95,31 +100,31 @@ padding:12px;
 font-size:18px;
 }
 
-/* SECTIONS */
+/* SECTION */
 
 section{
-padding:90px 20px;
+padding:80px 20px;
 text-align:center;
 }
 
 h2{
-font-size:50px;
 font-family:'Orbitron';
-margin-bottom:30px;
+font-size:45px;
+margin-bottom:25px;
 }
 
 /* PROFILE */
 
 .profile img{
-width:180px;
+width:170px;
 border-radius:50%;
 border:3px solid #00ffe5;
 }
 
-/* ABOUT TEXT */
+/* ABOUT */
 
 .about-text{
-font-size:24px;
+font-size:22px;
 max-width:800px;
 margin:auto;
 line-height:1.6;
@@ -128,22 +133,22 @@ line-height:1.6;
 /* SKILLS */
 
 .skills{
-font-size:26px;
+font-size:24px;
 }
 
 .skills li{
 list-style:none;
-padding:12px;
+padding:10px;
 }
 
-/* CONTACT BOX */
+/* CONTACT */
 
 .contact-box{
 border:2px solid #00ffe5;
 width:350px;
 margin:auto;
 padding:25px;
-font-size:22px;
+font-size:20px;
 }
 
 .contact-box input,
@@ -151,7 +156,6 @@ font-size:22px;
 width:90%;
 margin:10px;
 padding:10px;
-font-size:18px;
 background:black;
 color:#00ffe5;
 border:1px solid #00ffe5;
@@ -159,7 +163,7 @@ border:1px solid #00ffe5;
 
 .contact-box button{
 padding:10px 25px;
-font-size:20px;
+font-size:18px;
 background:black;
 color:#00ffe5;
 border:1px solid #00ffe5;
@@ -177,7 +181,7 @@ color:black;
 
 <body>
 
-<canvas id="matrix"></canvas>
+<canvas id="cyberCanvas"></canvas>
 
 <!-- NAVBAR -->
 
@@ -212,7 +216,7 @@ Download Resume
 
 <p>Enter Access Key</p>
 
-<input type="password" id="accessKey" placeholder="Access Key">
+<input type="password" id="accessKey">
 
 <br><br>
 
@@ -227,9 +231,7 @@ Download Resume
 <section id="about">
 
 <div class="profile">
-
 <img src="profile.jpg.jpeg">
-
 </div>
 
 <h2>About Me</h2>
@@ -237,13 +239,12 @@ Download Resume
 <p class="about-text">
 
 Cybersecurity enthusiast skilled in SOC monitoring,
-Linux administration, cloud security and threat detection.
+Linux administration, threat detection and cloud security.
 
 I focus on protecting systems, analyzing cyber attacks
 and building secure infrastructure.
 
-Currently pursuing B.Tech Computer Science
-(Cyber Security).
+Currently pursuing B.Tech Computer Science (Cyber Security).
 
 </p>
 
@@ -311,57 +312,68 @@ github.com/MAHESHBABU3722
 
 <script>
 
-/* MATRIX BACKGROUND */
+/* CYBER NETWORK BACKGROUND */
 
-const canvas=document.getElementById("matrix");
+const canvas=document.getElementById("cyberCanvas");
 const ctx=canvas.getContext("2d");
 
-canvas.height=window.innerHeight;
 canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
 
-const letters="01";
-const matrix=letters.split("");
+let particles=[];
 
-const font_size=16;
-const columns=canvas.width/font_size;
+for(let i=0;i<80;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+vx:(Math.random()-0.5),
+vy:(Math.random()-0.5)
+});
+}
 
-const drops=[];
+function animate(){
 
-for(let x=0;x<columns;x++)
-drops[x]=1;
+ctx.clearRect(0,0,canvas.width,canvas.height);
 
-function draw(){
+particles.forEach(p=>{
 
-ctx.fillStyle="rgba(0,0,0,0.05)";
-ctx.fillRect(0,0,canvas.width,canvas.height);
+p.x+=p.vx;
+p.y+=p.vy;
 
+ctx.beginPath();
+ctx.arc(p.x,p.y,2,0,Math.PI*2);
 ctx.fillStyle="#00ffe5";
-ctx.font=font_size+"px monospace";
+ctx.fill();
 
-for(let i=0;i<drops.length;i++){
+particles.forEach(p2=>{
 
-const text=matrix[Math.floor(Math.random()*matrix.length)];
+let dist=Math.hypot(p.x-p2.x,p.y-p2.y);
 
-ctx.fillText(text,i*font_size,drops[i]*font_size);
+if(dist<120){
 
-if(drops[i]*font_size>canvas.height && Math.random()>0.975)
-drops[i]=0;
-
-drops[i]++;
+ctx.beginPath();
+ctx.moveTo(p.x,p.y);
+ctx.lineTo(p2.x,p2.y);
+ctx.strokeStyle="rgba(0,255,229,0.2)";
+ctx.stroke();
 
 }
 
+});
+
+});
+
+requestAnimationFrame(animate);
+
 }
 
-setInterval(draw,35);
+animate();
 
 
-/* KEY ACCESS */
+/* RESUME ACCESS */
 
 function openKeyBox(){
-
 document.getElementById("keyBox").style.display="block";
-
 }
 
 function verifyKey(){
@@ -393,8 +405,7 @@ localStorage.visits=parseInt(localStorage.visits)+1;
 localStorage.visits=1;
 }
 
-document.getElementById("visitorCount").innerHTML=
-"Visitors: "+localStorage.visits;
+document.getElementById("visitorCount").innerHTML="Visitors: "+localStorage.visits;
 
 </script>
 
