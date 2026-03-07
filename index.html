@@ -1,1 +1,531 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Kollu Mahesh Babu | Cyber Security Portfolio</title> <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet"> <style> body{ margin:0; font-family:'Poppins',sans-serif; background:#020617; color:#e2e8f0; overflow-x:hidden; } /* CYBER BACKGROUND */ #cyberCanvas{ position:fixed; top:0; left:0; z-index:-1; } /* NAVBAR */ nav{ position:fixed; width:100%; background:rgba(2,6,23,0.9); backdrop-filter:blur(6px); padding:15px; text-align:center; z-index:10; } nav a{ color:#7dd3fc; margin:20px; font-size:20px; text-decoration:none; font-weight:600; } nav a:hover{ color:#22d3ee; } /* LANDING */ .landing{ height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding-top:60px; } .hero-title{ font-size:65px; font-family:'Orbitron'; color:#38bdf8; } .hero-sub{ font-size:26px; } /* BUTTON */ .resume-btn{ margin-top:30px; padding:14px 40px; font-size:20px; background:#020617; color:#38bdf8; border:2px solid #38bdf8; cursor:pointer; border-radius:8px; } .resume-btn:hover{ background:#38bdf8; color:black; } #keyBox{ display:none; margin-top:20px; } /* SECTION */ section{ padding:90px 20px; text-align:center; } h2{ font-family:'Orbitron'; font-size:40px; color:#38bdf8; } /* PROFILE */ .profile img{ width:170px; border-radius:50%; border:3px solid #38bdf8; } /* ABOUT */ .about-text{ font-size:20px; max-width:750px; margin:auto; line-height:1.7; } /* SKILLS */ .skills li{ list-style:none; padding:10px; font-size:22px; } /* PROJECTS */ .project-grid{ display:flex; flex-wrap:wrap; justify-content:center; gap:25px; margin-top:30px; } .project{ background:#020617; border:2px solid #38bdf8; padding:20px; width:260px; border-radius:10px; text-align:center; } .project img{ width:70px; } /* CERTIFICATIONS */ .cert-grid{ display:flex; flex-wrap:wrap; justify-content:center; gap:25px; margin-top:30px; } .cert-card{ background:#020617; border:2px solid #38bdf8; padding:20px; width:260px; border-radius:10px; text-align:center; } .cert-card img{ width:60px; margin-bottom:10px; } /* CONTACT */ .contact-box{ border:2px solid #38bdf8; width:350px; margin:auto; padding:25px; border-radius:10px; } .contact-box input, .contact-box textarea{ width:90%; margin:10px; padding:10px; background:#020617; color:white; border:1px solid #38bdf8; } .contact-box button{ padding:10px 25px; font-size:18px; background:#020617; color:#38bdf8; border:1px solid #38bdf8; cursor:pointer; } .contact-box button:hover{ background:#38bdf8; color:black; } </style> </head> <body> <canvas id="cyberCanvas"></canvas> <nav> <a href="#">Home</a> <a href="#about">About</a> <a href="#skills">Skills</a> <a href="#experience">Experience</a> <a href="#projects">Projects</a> <a href="#certifications">Certifications</a> <a href="#contact">Contact</a> </nav> <section class="landing"> <h1 class="hero-title">Kollu Mahesh Babu</h1> <p class="hero-sub"> Cyber Security Engineer | SOC Analyst | Cloud Security </p> <button class="resume-btn" onclick="openKeyBox()">Download Resume</button> <div id="keyBox"> <p>Enter Access Key</p> <input type="password" id="accessKey"> <br><br> <button onclick="verifyKey()">Verify</button> </div> </section> <section id="about"> <div class="profile"> <img src="profile.jpg.jpeg"> </div> <h2>About Me</h2> <p class="about-text"> Cybersecurity enthusiast skilled in SOC monitoring, Linux administration, cloud security and threat detection. Focused on protecting systems and analyzing cyber threats. Currently pursuing B.Tech Computer Science (Cyber Security). </p> </section> <section id="skills"> <h2>Skills</h2> <ul class="skills"> <li>Cyber Security</li> <li>SOC Monitoring</li> <li>Blue Team Operations</li> <li>Linux Administration</li> <li>Cloud Security</li> <li>Threat Detection</li> </ul> </section> <section id="experience"> <h2>Experience</h2> <div class="cert-grid"> <div class="cert-card"> <img src="https://img.icons8.com/color/96/company.png"> <p><b>IT Administrator</b></p> <p>Sureworks Infotech Pvt Ltd</p> <p>Bangalore Head Office</p> <p>Feb 12, 2026 – Present</p> <p>Managing IT infrastructure, network administration, system security, and supporting cybersecurity operations within the organization.</p> </div> </div> </section> <section id="projects"> <h2>Projects</h2> <div class="project-grid"> <div class="project"> <img src="https://img.icons8.com/color/96/security-checked.png"> <h3>Security Monitoring System</h3> <p>Threat detection monitoring tool.</p> </div> <div class="project"> <img src="https://img.icons8.com/color/96/database.png"> <h3>Data Recovery Tool</h3> <p>Research paper on recovery tool using Recuva.</p> </div> <div class="project"> <img src="https://img.icons8.com/color/96/amazon-web-services.png"> <h3>AWS Load Balancer</h3> <p>High availability using AWS load balancing.</p> </div> </div> </section> <section id="certifications"> <h2>Certifications</h2> <div class="cert-grid"> <div class="cert-card"> <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg"> <p>Cisco Operating System Fundamentals</p> </div> <div class="cert-card"> <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg"> <p>Cisco AICTE Virtual Internship – Cyber Security</p> </div> <div class="cert-card"> <img src="https://img.icons8.com/color/96/amazon-web-services.png"> <p>AWS Cloud Computing – APSSDC</p> </div> <div class="cert-card"> <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg"> <p>Cisco Introduction to Cybersecurity</p> </div> <div class="cert-card"> <img src="https://img.icons8.com/color/96/tata.png"> <p>Tata Forage Cybersecurity Analyst Job Simulation</p> </div> <div class="cert-card"> <img src="https://img.icons8.com/color/96/security-checked.png"> <p>OPSWAT ICIP – Introduction to CIP</p> </div> <div class="cert-card"> <img src="https://img.icons8.com/color/96/microsoft.png"> <p>Microsoft Azure Data Engineer Associate</p> </div> <div class="cert-card"> <img src="https://img.icons8.com/color/96/ibm.png"> <p>IBM Introduction to Cloud Computing</p> </div> <div class="cert-card"> <img src="https://img.icons8.com/color/96/google-logo.png"> <p>Google Data Analytics – Coursera</p> </div> <div class="cert-card"> <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg"> <p>Cisco Cybersecurity Essentials</p> </div> <div class="cert-card"> <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg"> <p>Cisco Introduction to Packet Tracer</p> </div> <div class="cert-card"> <img src="https://img.icons8.com/color/96/document.png"> <p>Research Paper – Data Recovery Tool (Recuva)</p> </div> </div> </section> <section id="contact"> <h2>Contact Me</h2> <div class="contact-box"> <p>Email: maheshkollubabu@gmail.com</p> <p>Phone: +91 9492617422</p> <p> GitHub: <a href="https://github.com/MAHESHBABU3722" style="color:#7dd3fc;"> github.com/MAHESHBABU3722 </a> </p> </div> </section> <script> const canvas=document.getElementById("cyberCanvas"); const ctx=canvas.getContext("2d"); canvas.width=window.innerWidth; canvas.height=window.innerHeight; let particles=[]; for(let i=0;i<80;i++){ particles.push({ x:Math.random()*canvas.width, y:Math.random()*canvas.height, vx:(Math.random()-0.5), vy:(Math.random()-0.5) }); } function animate(){ ctx.clearRect(0,0,canvas.width,canvas.height); particles.forEach(p=>{ p.x+=p.vx; p.y+=p.vy; ctx.beginPath(); ctx.arc(p.x,p.y,2,0,Math.PI*2); ctx.fillStyle="#38bdf8"; ctx.fill(); particles.forEach(p2=>{ let dist=Math.hypot(p.x-p2.x,p.y-p2.y); if(dist<120){ ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(p2.x,p2.y); ctx.strokeStyle="rgba(56,189,248,0.15)"; ctx.stroke(); } }); }); requestAnimationFrame(animate); } animate(); function openKeyBox(){ document.getElementById("keyBox").style.display="block"; } function verifyKey(){ let key=document.getElementById("accessKey").value; if(key==="Mahesh@2026"){ alert("ACCESS GRANTED"); window.location.href="Kollu_Mahesh_Babu_Resume.pdf"; } else{ alert("ACCESS DENIED"); } } </script> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kollu Mahesh Babu | Cyber Security Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#020617;
+color:#e2e8f0;
+overflow-x:hidden;
+}
+
+/* CYBER BACKGROUND */
+
+#cyberCanvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+width:100%;
+background:rgba(2,6,23,0.9);
+backdrop-filter:blur(6px);
+padding:15px;
+text-align:center;
+z-index:10;
+}
+
+nav a{
+color:#7dd3fc;
+margin:20px;
+font-size:20px;
+text-decoration:none;
+font-weight:600;
+}
+
+nav a:hover{
+color:#22d3ee;
+}
+
+/* LANDING */
+
+.landing{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding-top:60px;
+}
+
+.hero-title{
+font-size:65px;
+font-family:'Orbitron';
+color:#38bdf8;
+}
+
+.hero-sub{
+font-size:26px;
+}
+
+/* BUTTON */
+
+.resume-btn{
+margin-top:30px;
+padding:14px 40px;
+font-size:20px;
+background:#020617;
+color:#38bdf8;
+border:2px solid #38bdf8;
+cursor:pointer;
+border-radius:8px;
+}
+
+.resume-btn:hover{
+background:#38bdf8;
+color:black;
+}
+
+#keyBox{
+display:none;
+margin-top:20px;
+}
+
+/* SECTION */
+
+section{
+padding:90px 20px;
+text-align:center;
+}
+
+h2{
+font-family:'Orbitron';
+font-size:40px;
+color:#38bdf8;
+}
+
+/* PROFILE */
+
+.profile img{
+width:170px;
+border-radius:50%;
+border:3px solid #38bdf8;
+}
+
+/* ABOUT */
+
+.about-text{
+font-size:20px;
+max-width:750px;
+margin:auto;
+line-height:1.7;
+}
+
+/* SKILLS */
+
+.skills li{
+list-style:none;
+padding:10px;
+font-size:22px;
+}
+
+/* PROJECTS */
+
+.project-grid{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+margin-top:30px;
+}
+
+.project{
+background:#020617;
+border:2px solid #38bdf8;
+padding:20px;
+width:260px;
+border-radius:10px;
+text-align:center;
+}
+
+.project img{
+width:70px;
+}
+
+/* CERTIFICATIONS */
+
+.cert-grid{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+margin-top:30px;
+}
+
+.cert-card{
+background:#020617;
+border:2px solid #38bdf8;
+padding:20px;
+width:260px;
+border-radius:10px;
+text-align:center;
+}
+
+.cert-card img{
+width:60px;
+margin-bottom:10px;
+}
+
+/* CONTACT */
+
+.contact-box{
+border:2px solid #38bdf8;
+width:350px;
+margin:auto;
+padding:25px;
+border-radius:10px;
+}
+
+.contact-box input,
+.contact-box textarea{
+width:90%;
+margin:10px;
+padding:10px;
+background:#020617;
+color:white;
+border:1px solid #38bdf8;
+}
+
+.contact-box button{
+padding:10px 25px;
+font-size:18px;
+background:#020617;
+color:#38bdf8;
+border:1px solid #38bdf8;
+cursor:pointer;
+}
+
+.contact-box button:hover{
+background:#38bdf8;
+color:black;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<canvas id="cyberCanvas"></canvas>
+
+<nav>
+
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#experience">Experience</a>
+<a href="#projects">Projects</a>
+<a href="#certifications">Certifications</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+<section class="landing">
+
+<h1 class="hero-title">Kollu Mahesh Babu</h1>
+
+<p class="hero-sub">
+Cyber Security Engineer | SOC Analyst | Cloud Security
+</p>
+
+<button class="resume-btn" onclick="openKeyBox()">Download Resume</button>
+
+<div id="keyBox">
+
+<p>Enter Access Key</p>
+
+<input type="password" id="accessKey">
+
+<br><br>
+
+<button onclick="verifyKey()">Verify</button>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<div class="profile">
+<img src="profile.jpg.jpeg">
+</div>
+
+<h2>About Me</h2>
+
+<p class="about-text">
+
+Cybersecurity enthusiast skilled in SOC monitoring, Linux administration,
+cloud security and threat detection.
+
+Focused on protecting systems and analyzing cyber threats.
+
+Currently pursuing B.Tech Computer Science (Cyber Security).
+
+</p>
+
+</section>
+
+<section id="skills">
+
+<h2>Skills</h2>
+
+<ul class="skills">
+
+<li>Cyber Security</li>
+<li>SOC Monitoring</li>
+<li>Blue Team Operations</li>
+<li>Linux Administration</li>
+<li>Cloud Security</li>
+<li>Threat Detection</li>
+
+</ul>
+
+</section>
+
+<section id="experience">
+
+<h2>Experience</h2>
+
+<div class="cert-grid">
+
+<div class="cert-card">
+
+<img src="https://img.icons8.com/color/96/company.png">
+
+<p><b>IT Administrator</b></p>
+
+<p>Sureworks Infotech Pvt Ltd</p>
+
+<p>Bangalore Head Office</p>
+
+<p>Feb 12, 2026 – Present</p>
+
+<p>Managing IT infrastructure, network administration, system security,
+and supporting cybersecurity operations within the organization.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2>Projects</h2>
+
+<div class="project-grid">
+
+<div class="project">
+<img src="https://img.icons8.com/color/96/security-checked.png">
+<h3>Security Monitoring System</h3>
+<p>Threat detection monitoring tool.</p>
+</div>
+
+<div class="project">
+<img src="https://img.icons8.com/color/96/database.png">
+<h3>Data Recovery Tool</h3>
+<p>Research paper on recovery tool using Recuva.</p>
+</div>
+
+<div class="project">
+<img src="https://img.icons8.com/color/96/amazon-web-services.png">
+<h3>AWS Load Balancer</h3>
+<p>High availability using AWS load balancing.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="certifications">
+
+<h2>Certifications</h2>
+
+<div class="cert-grid">
+
+<div class="cert-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg">
+<p>Cisco Operating System Fundamentals</p>
+</div>
+
+<div class="cert-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg">
+<p>Cisco AICTE Virtual Internship – Cyber Security</p>
+</div>
+
+<div class="cert-card">
+<img src="https://img.icons8.com/color/96/amazon-web-services.png">
+<p>AWS Cloud Computing – APSSDC</p>
+</div>
+
+<div class="cert-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg">
+<p>Cisco Introduction to Cybersecurity</p>
+</div>
+
+<div class="cert-card">
+<img src="https://img.icons8.com/color/96/tata.png">
+<p>Tata Forage Cybersecurity Analyst Job Simulation</p>
+</div>
+
+<div class="cert-card">
+<img src="https://img.icons8.com/color/96/security-checked.png">
+<p>OPSWAT ICIP – Introduction to CIP</p>
+</div>
+
+<div class="cert-card">
+<img src="https://img.icons8.com/color/96/microsoft.png">
+<p>Microsoft Azure Data Engineer Associate</p>
+</div>
+
+<div class="cert-card">
+<img src="https://img.icons8.com/color/96/ibm.png">
+<p>IBM Introduction to Cloud Computing</p>
+</div>
+
+<div class="cert-card">
+<img src="https://img.icons8.com/color/96/google-logo.png">
+<p>Google Data Analytics – Coursera</p>
+</div>
+
+<div class="cert-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg">
+<p>Cisco Cybersecurity Essentials</p>
+</div>
+
+<div class="cert-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg">
+<p>Cisco Introduction to Packet Tracer</p>
+</div>
+
+<div class="cert-card">
+<img src="https://img.icons8.com/color/96/document.png">
+<p>Research Paper – Data Recovery Tool (Recuva)</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2>Contact Me</h2>
+
+<div class="contact-box">
+
+<p>Email: maheshkollubabu@gmail.com</p>
+<p>Phone: +91 9492617422</p>
+
+<p>
+GitHub:
+<a href="https://github.com/MAHESHBABU3722" style="color:#7dd3fc;">
+github.com/MAHESHBABU3722
+</a>
+</p>
+
+</div>
+
+</section>
+
+<script>
+
+const canvas=document.getElementById("cyberCanvas");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+
+for(let i=0;i<80;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+vx:(Math.random()-0.5),
+vy:(Math.random()-0.5)
+});
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particles.forEach(p=>{
+
+p.x+=p.vx;
+p.y+=p.vy;
+
+ctx.beginPath();
+ctx.arc(p.x,p.y,2,0,Math.PI*2);
+ctx.fillStyle="#38bdf8";
+ctx.fill();
+
+particles.forEach(p2=>{
+
+let dist=Math.hypot(p.x-p2.x,p.y-p2.y);
+
+if(dist<120){
+
+ctx.beginPath();
+ctx.moveTo(p.x,p.y);
+ctx.lineTo(p2.x,p2.y);
+ctx.strokeStyle="rgba(56,189,248,0.15)";
+ctx.stroke();
+
+}
+
+});
+
+});
+
+requestAnimationFrame(animate);
+
+}
+
+animate();
+
+function openKeyBox(){
+document.getElementById("keyBox").style.display="block";
+}
+
+function verifyKey(){
+
+let key=document.getElementById("accessKey").value;
+
+if(key==="Mahesh@2026"){
+
+alert("ACCESS GRANTED");
+
+window.location.href="Kollu_Mahesh_Babu_Resume.pdf";
+
+}
+
+else{
+
+alert("ACCESS DENIED");
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
