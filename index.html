@@ -6,17 +6,19 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
+<script src="https://unpkg.com/scrollreveal"></script>
+
 <style>
 
 body{
 margin:0;
 font-family:Arial;
 background:black;
-color:#00ffea;
+color:#00ffe5;
 overflow-x:hidden;
 }
 
-/* MATRIX BACKGROUND */
+/* MATRIX */
 
 canvas{
 position:fixed;
@@ -38,65 +40,63 @@ color:#00ffe5;
 margin:20px;
 text-decoration:none;
 font-size:18px;
-font-family:'Orbitron';
+font-family:Orbitron;
 }
 
-/* HERO */
+/* LANDING */
 
-.hero{
+.landing{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
-padding:80px 20px;
 }
 
-.name{
+.hero-title{
 font-size:70px;
-font-family:'Orbitron';
-color:#00ffe5;
-text-shadow:0 0 15px #00ffe5;
+font-family:Orbitron;
+text-shadow:0 0 20px #00ffe5;
 }
 
-.hero img{
-width:170px;
-border-radius:50%;
-border:3px solid #00ffe5;
-margin:20px;
-}
-
-/* TYPING */
-
-.typing{
-height:30px;
+.hero-sub{
 font-size:22px;
-color:#00ffe5;
+margin-top:10px;
 }
 
-/* BUTTON */
-
-button{
+.resume-btn{
+margin-top:20px;
+padding:12px 30px;
+font-size:18px;
 background:black;
 color:#00ffe5;
-border:2px solid #00ffe5;
-padding:10px 25px;
+border:1px solid #00ffe5;
 cursor:pointer;
-font-size:16px;
-margin-top:20px;
 }
 
-button:hover{
+.resume-btn:hover{
 background:#00ffe5;
 color:black;
 }
 
-/* SECTION */
+/* SECTIONS */
 
 section{
-padding:70px 20px;
+padding:80px 20px;
 text-align:center;
 }
 
 h2{
-font-family:'Orbitron';
-color:#00ffe5;
+font-family:Orbitron;
+}
+
+/* PROFILE */
+
+.profile img{
+width:160px;
+border-radius:50%;
+border:3px solid #00ffe5;
 }
 
 /* SKILLS */
@@ -106,12 +106,12 @@ list-style:none;
 padding:10px;
 }
 
-/* PROJECT CARDS */
+/* PROJECTS */
 
 .project-grid{
 display:flex;
-justify-content:center;
 flex-wrap:wrap;
+justify-content:center;
 gap:20px;
 }
 
@@ -124,19 +124,54 @@ border-radius:10px;
 box-shadow:0 0 10px #00ffe5;
 }
 
-.project img{
-width:50px;
+.project a{
+color:#00ffe5;
 }
 
-/* OTP BOX */
+/* GITHUB */
 
-#otpBox{
-display:none;
-margin-top:20px;
+#repoContainer{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
 }
 
-input{
+/* GLOBE */
+
+#globe{
+margin-top:30px;
+}
+
+/* CONTACT */
+
+.contact-box{
+border:1px solid #00ffe5;
+width:300px;
+margin:auto;
+padding:20px;
+}
+
+input,textarea{
+width:90%;
 padding:8px;
+margin:10px;
+background:black;
+color:#00ffe5;
+border:1px solid #00ffe5;
+}
+
+button{
+background:black;
+color:#00ffe5;
+border:1px solid #00ffe5;
+padding:10px 25px;
+cursor:pointer;
+}
+
+button:hover{
+background:#00ffe5;
+color:black;
 }
 
 </style>
@@ -148,49 +183,61 @@ padding:8px;
 <canvas id="matrix"></canvas>
 
 <nav>
+
 <a href="#">Home</a>
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
+<a href="#github">Projects</a>
 <a href="#contact">Contact</a>
+
 </nav>
 
 
-<section class="hero">
+<!-- LANDING -->
 
-<div class="name">Kollu Mahesh Babu</div>
+<section class="landing">
 
-<img src="profile.jpg.jpeg">
+<h1 class="hero-title">Kollu Mahesh Babu</h1>
 
-<p>B.Tech Computer Science (Cybersecurity)</p>
+<p class="hero-sub">
+Cyber Security Engineer | SOC Analyst | Cloud Security
+</p>
 
-<div class="typing">
-<span id="typing-text"></span>
-</div>
+<a href="Kollu_Mahesh_Babu_Resume.pdf" download onclick="countDownload()">
 
-<button onclick="sendOTP()">Download Resume</button>
+<button class="resume-btn">Download Resume</button>
 
-<div id="otpBox">
-<br>
-<input type="text" id="otpInput" placeholder="Enter OTP">
-<button onclick="verifyOTP()">Verify</button>
-</div>
+</a>
+
+<p id="downloadCount">Downloads: 0</p>
 
 </section>
 
 
+<!-- ABOUT -->
+
 <section id="about">
+
+<div class="profile">
+
+<img src="profile.jpg.jpeg">
+
+</div>
 
 <h2>About Me</h2>
 
 <p>
-Cybersecurity enthusiast skilled in SOC monitoring, cloud security,
-Linux administration, and threat analysis.
-Focused on building secure infrastructure and analyzing cyber threats.
+
+Cybersecurity enthusiast skilled in SOC monitoring,
+Linux administration, threat detection, and cloud security.
+Focused on protecting systems and analyzing cyber threats.
+
 </p>
 
 </section>
 
+
+<!-- SKILLS -->
 
 <section id="skills">
 
@@ -203,45 +250,42 @@ Focused on building secure infrastructure and analyzing cyber threats.
 <li>Blue Team Operations</li>
 <li>Cloud Security</li>
 <li>Linux Administration</li>
-<li>Data Analytics</li>
+<li>Threat Analysis</li>
 
 </ul>
 
 </section>
 
 
-<section id="projects">
+<!-- GITHUB PROJECTS -->
 
-<h2>Projects</h2>
+<section id="github">
 
-<div class="project-grid">
+<h2>GitHub Projects</h2>
 
-<div class="project">
-<img src="https://img.icons8.com/fluency/96/cloud.png">
-<h3>AWS Load Balancer</h3>
-<p>Improved application availability and performance.</p>
-</div>
-
-<div class="project">
-<img src="https://img.icons8.com/fluency/96/security-checked.png">
-<h3>Security Monitoring</h3>
-<p>Developed system monitoring with logging analysis.</p>
-</div>
-
-<div class="project">
-<img src="https://img.icons8.com/fluency/96/database.png">
-<h3>Data Recovery Tool</h3>
-<p>Enhanced recovery algorithm efficiency.</p>
-</div>
-
-</div>
+<div id="repoContainer"></div>
 
 </section>
 
 
+<!-- CYBER GLOBE -->
+
+<section>
+
+<h2>Global Cyber Threat Map</h2>
+
+<div id="globe"></div>
+
+</section>
+
+
+<!-- CONTACT -->
+
 <section id="contact">
 
-<h2>Contact</h2>
+<h2>Contact Me</h2>
+
+<div class="contact-box">
 
 <p>Email: maheshkollubabu@gmail.com</p>
 <p>Phone: +91 9492617422</p>
@@ -253,7 +297,18 @@ github.com/MAHESHBABU3722
 </a>
 </p>
 
+<h3>Send Message</h3>
+
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea placeholder="Message"></textarea>
+
+<button>Send</button>
+
+</div>
+
 </section>
+
 
 <section>
 
@@ -282,8 +337,7 @@ const columns=canvas.width/font_size;
 
 const drops=[];
 
-for(let x=0;x<columns;x++)
-drops[x]=1;
+for(let x=0;x<columns;x++) drops[x]=1;
 
 function draw(){
 
@@ -311,73 +365,19 @@ drops[i]++;
 setInterval(draw,35);
 
 
-/* TYPING */
+/* DOWNLOAD COUNTER */
 
-const words=[
-"Cyber Security",
-"SOC Analyst",
-"Blue Team",
-"Cloud Security",
-"Linux Security",
-"Threat Monitoring"
-];
+let downloads=localStorage.getItem("resumeDownloads") || 0;
 
-let i=0,j=0,isDeleting=false;
+document.getElementById("downloadCount").innerText="Downloads: "+downloads;
 
-function type(){
+function countDownload(){
 
-let word=words[i];
+downloads++;
 
-if(isDeleting) j--;
-else j++;
+localStorage.setItem("resumeDownloads",downloads);
 
-document.getElementById("typing-text").innerHTML=word.substring(0,j);
-
-if(!isDeleting && j===word.length){
-isDeleting=true;
-setTimeout(type,1000);
-return;
-}
-
-if(isDeleting && j===0){
-isDeleting=false;
-i=(i+1)%words.length;
-}
-
-setTimeout(type,120);
-
-}
-
-type();
-
-
-/* OTP SYSTEM */
-
-let otp;
-
-function sendOTP(){
-
-otp=Math.floor(1000+Math.random()*9000);
-
-alert("OTP sent to Mahesh email: "+otp);
-
-document.getElementById("otpBox").style.display="block";
-
-}
-
-function verifyOTP(){
-
-let user=document.getElementById("otpInput").value;
-
-if(user==otp){
-
-window.location.href="Kollu_Mahesh_Babu_Resume.pdf";
-
-}else{
-
-alert("Wrong OTP");
-
-}
+document.getElementById("downloadCount").innerText="Downloads: "+downloads;
 
 }
 
@@ -393,7 +393,91 @@ localStorage.visits=1;
 document.getElementById("visitorCount").innerHTML=
 "Visitors: "+localStorage.visits;
 
+
+/* GITHUB PROJECTS */
+
+fetch("https://api.github.com/users/MAHESHBABU3722/repos")
+.then(res=>res.json())
+.then(data=>{
+
+let container=document.getElementById("repoContainer");
+
+data.slice(0,6).forEach(repo=>{
+
+let card=document.createElement("div");
+
+card.className="project";
+
+card.innerHTML=`
+<h3>${repo.name}</h3>
+<p>${repo.description || "No description"}</p>
+<a href="${repo.html_url}" target="_blank">View Project</a>
+`;
+
+container.appendChild(card);
+
+});
+
+});
+
+
+/* SCROLL ANIMATION */
+
+ScrollReveal().reveal('section',{
+distance:'60px',
+duration:1500,
+origin:'bottom',
+interval:200
+});
+
+
 </script>
+
+
+<script src="https://unpkg.com/three@0.155.0/build/three.min.js"></script>
+
+<script>
+
+/* 3D CYBER GLOBE */
+
+const scene=new THREE.Scene();
+
+const camera=new THREE.PerspectiveCamera(
+75,600/400,0.1,1000);
+
+const renderer=new THREE.WebGLRenderer();
+
+renderer.setSize(600,400);
+
+document.getElementById("globe").appendChild(renderer.domElement);
+
+const geometry=new THREE.SphereGeometry(2,32,32);
+
+const material=new THREE.MeshBasicMaterial({
+wireframe:true,
+color:0x00ffe5
+});
+
+const sphere=new THREE.Mesh(geometry,material);
+
+scene.add(sphere);
+
+camera.position.z=5;
+
+function animate(){
+
+requestAnimationFrame(animate);
+
+sphere.rotation.y+=0.01;
+
+renderer.render(scene,camera);
+
+}
+
+animate();
+
+</script>
+
 
 </body>
 </html>
