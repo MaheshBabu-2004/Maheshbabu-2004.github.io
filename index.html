@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,13 +13,13 @@
 
 <style>
 
-/* GENERAL */
+/* BODY */
 
 body{
 margin:0;
 font-family:'Poppins',sans-serif;
-background:black;
-color:#00ffe5;
+background:#020617;
+color:#cbd5f5;
 overflow-x:hidden;
 }
 
@@ -34,17 +35,26 @@ z-index:-1;
 /* NAVBAR */
 
 nav{
-background:#020617;
-padding:18px;
+position:fixed;
+width:100%;
+background:rgba(2,6,23,0.8);
+backdrop-filter:blur(8px);
+padding:15px;
 text-align:center;
+z-index:10;
 }
 
 nav a{
-color:#00ffe5;
+color:#7dd3fc;
 margin:20px;
 font-size:20px;
 text-decoration:none;
 font-weight:600;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#22d3ee;
 }
 
 /* LANDING */
@@ -56,17 +66,19 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
+padding-top:60px;
 }
 
 .hero-title{
-font-size:70px;
+font-size:65px;
 font-family:'Orbitron';
-text-shadow:0 0 25px #00ffe5;
+color:#38bdf8;
 }
 
 .hero-sub{
-font-size:28px;
+font-size:26px;
 margin-top:10px;
+color:#e2e8f0;
 }
 
 /* BUTTON */
@@ -74,16 +86,17 @@ margin-top:10px;
 .resume-btn{
 margin-top:30px;
 padding:14px 40px;
-font-size:22px;
-background:black;
-color:#00ffe5;
-border:2px solid #00ffe5;
+font-size:20px;
+background:#020617;
+color:#38bdf8;
+border:2px solid #38bdf8;
 cursor:pointer;
 border-radius:8px;
+transition:0.3s;
 }
 
 .resume-btn:hover{
-background:#00ffe5;
+background:#38bdf8;
 color:black;
 }
 
@@ -91,25 +104,27 @@ color:black;
 
 #keyBox{
 display:none;
-margin-top:25px;
+margin-top:20px;
 }
 
 input{
 padding:12px;
-font-size:18px;
+font-size:16px;
+border-radius:6px;
+border:none;
 }
 
 /* SECTION */
 
 section{
-padding:80px 20px;
+padding:90px 20px;
 text-align:center;
 }
 
 h2{
 font-family:'Orbitron';
-font-size:45px;
-margin-bottom:25px;
+font-size:40px;
+color:#38bdf8;
 }
 
 /* PROFILE */
@@ -117,22 +132,22 @@ margin-bottom:25px;
 .profile img{
 width:170px;
 border-radius:50%;
-border:3px solid #00ffe5;
+border:3px solid #38bdf8;
 }
 
 /* ABOUT */
 
 .about-text{
-font-size:22px;
-max-width:800px;
+font-size:21px;
+max-width:750px;
 margin:auto;
-line-height:1.6;
+line-height:1.7;
 }
 
 /* SKILLS */
 
 .skills{
-font-size:24px;
+font-size:22px;
 }
 
 .skills li{
@@ -143,11 +158,13 @@ padding:10px;
 /* CONTACT */
 
 .contact-box{
-border:2px solid #00ffe5;
+border:2px solid #38bdf8;
 width:350px;
 margin:auto;
 padding:25px;
 font-size:20px;
+border-radius:10px;
+background:rgba(2,6,23,0.8);
 }
 
 .contact-box input,
@@ -155,22 +172,22 @@ font-size:20px;
 width:90%;
 margin:10px;
 padding:10px;
-background:black;
-color:#00ffe5;
-border:1px solid #00ffe5;
+background:#020617;
+color:white;
+border:1px solid #38bdf8;
 }
 
 .contact-box button{
 padding:10px 25px;
 font-size:18px;
-background:black;
-color:#00ffe5;
-border:1px solid #00ffe5;
+background:#020617;
+color:#38bdf8;
+border:1px solid #38bdf8;
 cursor:pointer;
 }
 
 .contact-box button:hover{
-background:#00ffe5;
+background:#38bdf8;
 color:black;
 }
 
@@ -182,8 +199,6 @@ color:black;
 
 <canvas id="cyberCanvas"></canvas>
 
-<!-- NAVBAR -->
-
 <nav>
 
 <a href="#">Home</a>
@@ -192,8 +207,6 @@ color:black;
 <a href="#contact">Contact</a>
 
 </nav>
-
-<!-- LANDING -->
 
 <section class="landing">
 
@@ -209,8 +222,6 @@ Download Resume
 
 <div id="keyBox">
 
-<br>
-
 <h3>Security Access</h3>
 
 <p>Enter Access Key</p>
@@ -225,8 +236,6 @@ Download Resume
 
 </section>
 
-<!-- ABOUT -->
-
 <section id="about">
 
 <div class="profile">
@@ -240,16 +249,13 @@ Download Resume
 Cybersecurity enthusiast skilled in SOC monitoring,
 Linux administration, threat detection and cloud security.
 
-I focus on protecting systems, analyzing cyber attacks
-and building secure infrastructure.
+Focused on protecting systems and analyzing cyber threats.
 
 Currently pursuing B.Tech Computer Science (Cyber Security).
 
 </p>
 
 </section>
-
-<!-- SKILLS -->
 
 <section id="skills">
 
@@ -268,8 +274,6 @@ Currently pursuing B.Tech Computer Science (Cyber Security).
 
 </section>
 
-<!-- CONTACT -->
-
 <section id="contact">
 
 <h2>Contact Me</h2>
@@ -277,12 +281,11 @@ Currently pursuing B.Tech Computer Science (Cyber Security).
 <div class="contact-box">
 
 <p>Email: maheshkollubabu@gmail.com</p>
-
 <p>Phone: +91 9492617422</p>
 
 <p>
 GitHub:
-<a href="https://github.com/MAHESHBABU3722" style="color:#00ffe5;">
+<a href="https://github.com/MAHESHBABU3722" style="color:#7dd3fc;">
 github.com/MAHESHBABU3722
 </a>
 </p>
@@ -290,9 +293,7 @@ github.com/MAHESHBABU3722
 <h3>Send Message</h3>
 
 <input type="text" placeholder="Your Name">
-
 <input type="email" placeholder="Your Email">
-
 <textarea placeholder="Message"></textarea>
 
 <button>Send</button>
@@ -311,7 +312,7 @@ github.com/MAHESHBABU3722
 
 <script>
 
-/* CYBER NETWORK BACKGROUND */
+/* CYBER BACKGROUND */
 
 const canvas=document.getElementById("cyberCanvas");
 const ctx=canvas.getContext("2d");
@@ -341,7 +342,7 @@ p.y+=p.vy;
 
 ctx.beginPath();
 ctx.arc(p.x,p.y,2,0,Math.PI*2);
-ctx.fillStyle="#00ffe5";
+ctx.fillStyle="#38bdf8";
 ctx.fill();
 
 particles.forEach(p2=>{
@@ -353,7 +354,7 @@ if(dist<120){
 ctx.beginPath();
 ctx.moveTo(p.x,p.y);
 ctx.lineTo(p2.x,p2.y);
-ctx.strokeStyle="rgba(0,255,229,0.2)";
+ctx.strokeStyle="rgba(56,189,248,0.15)";
 ctx.stroke();
 
 }
@@ -367,7 +368,6 @@ requestAnimationFrame(animate);
 }
 
 animate();
-
 
 /* RESUME ACCESS */
 
@@ -394,7 +394,6 @@ alert("ACCESS DENIED");
 }
 
 }
-
 
 /* VISITOR COUNTER */
 
